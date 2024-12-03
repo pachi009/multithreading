@@ -16,6 +16,7 @@ public class Restaurant {
 }
 
 class Chef implements Runnable {
+
     private final String name;
     private final String dish;
     private final CountDownLatch latch;
