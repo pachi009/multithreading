@@ -4,17 +4,17 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 public class BlockingQueueDemo {
-    private static final int CAPACITY = 10;
+    private static final int CAPACITY = 8;
     private static BlockingQueue<Integer> queue = new ArrayBlockingQueue<Integer>(CAPACITY);
 
     public static void main(String[] args) {
 //        Producer thread to produce data
         Thread producer = new Thread(() -> {
-            for (int i = 0; i < 20; i++) {
+            for (int i = 0; i < 10; i++) {
                 try {
                     queue.put(i);
                     System.out.println("Task produced: " +i);
-                    Thread.sleep(200);
+                    Thread.sleep(50);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
@@ -48,6 +48,5 @@ public class BlockingQueueDemo {
         producer.start();
         consumerOne.start();
         consumerTwo.start();
-
     }
 }
