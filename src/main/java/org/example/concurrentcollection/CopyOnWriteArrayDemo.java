@@ -43,7 +43,7 @@ class ReadTask implements Runnable {
 class WriteTask implements Runnable {
 
     private final List<Integer> list;
-    private Random random;
+    private final Random random;
 
     public WriteTask(List<Integer> list) {
         this.list = list;
