@@ -7,9 +7,9 @@ public class MultiStageTour {
 
     private static final int TOURISTS = 5;
     private static final int STAGES = 3;
-    public static final CyclicBarrier barrier = new CyclicBarrier(TOURISTS, () -> {
-        System.out.println("The Tourist Guide starts speaking ........");
-    });
+    public static final CyclicBarrier barrier = new CyclicBarrier(TOURISTS, () ->
+        System.out.println("The Tourist Guide starts speaking ........")
+    );
 
     public static void main(String[] args) {
         for (int i = 0; i < TOURISTS; i++) {

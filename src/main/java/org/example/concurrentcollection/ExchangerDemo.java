@@ -4,7 +4,7 @@ import java.util.concurrent.Exchanger;
 
 public class ExchangerDemo {
     public static void main(String[] args) {
-        Exchanger<Integer> exchanger = new Exchanger();
+        Exchanger<Integer> exchanger = new Exchanger<>();
         Thread t1 = new Thread(new ThreadOne(exchanger));
         Thread t2 = new Thread(new ThreadTwo(exchanger));
         t1.start();

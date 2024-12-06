@@ -7,9 +7,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class CopyOnWriteArrayDemo {
     public static void main(String[] args) {
-        List<Integer> list = new CopyOnWriteArrayList<>();
-        list.addAll(Arrays.asList(0,0,0,0,0,0,0,0,0));
-
+        List<Integer> list = new CopyOnWriteArrayList<>(Arrays.asList(0, 0, 0, 0, 0, 0, 0, 0, 0));
         Thread reader = new Thread(new ReadTask(list));
         Thread writer1 = new Thread(new WriteTask(list));
         Thread writer2 = new Thread(new WriteTask(list));
@@ -31,13 +29,13 @@ class ReadTask implements Runnable {
     }
 
     public void run() {
-        try {
-            while(true){
+        while(true){
+            try {
                 Thread.sleep(1000);
-                System.out.println(list);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
             }
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            System.out.println(list);
         }
     }
 }
