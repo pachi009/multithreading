@@ -1,4 +1,4 @@
-package org.example;
+package org.example.basics;
 
 public class JoinThreadExample {
     public static void main(String[] args) throws InterruptedException {
@@ -17,6 +17,7 @@ public class JoinThreadExample {
         t2.start();
 
         t1.join();
+//        t2.join();
         System.out.println("Main Thread Finished");
     }
 }

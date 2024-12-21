@@ -8,7 +8,7 @@ public class CachedThreadPoolDemo {
         ExecutorService executor = Executors.newCachedThreadPool();
         int cores = Runtime.getRuntime().availableProcessors();
         System.out.println("Available Processors: " + cores);
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 500; i++) {
             executor.execute(new CachedWork(i));
         }
         executor.shutdown();

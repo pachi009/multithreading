@@ -1,4 +1,4 @@
-package org.example;
+package org.example.basics;
 
 public class SequentialExecution {
     public static void main(String[] args) {

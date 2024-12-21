@@ -9,6 +9,20 @@ public class FixedThreadPoolDemo {
         for (int i = 0; i < 15; i++) {
             executor.execute(new Work(i));
         }
+
+//      Simply create a runnable instance and call the execute method
+        for (int i = 0; i < 15; i++) {
+            int finalI = i;
+            executor.execute(() -> {
+                System.out.println("Task with ID: " + finalI + " executed by " + Thread.currentThread().getName());
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            });
+        }
+
         executor.shutdown();
     }
 }

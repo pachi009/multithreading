@@ -1,4 +1,4 @@
-package org.example;
+package org.example.threadsynchronization;
 
 public class LockWithCustomObjects {
     private static int counter1 = 0;

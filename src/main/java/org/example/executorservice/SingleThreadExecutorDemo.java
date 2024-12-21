@@ -9,6 +9,15 @@ public class SingleThreadExecutorDemo {
         for (int i = 0; i < 5; i++) {
             executorService.submit(new Task(i));
         }
+
+//      Simply create a runnable instance and call execute
+        for (int i = 0; i < 10; i++) {
+            int finalI = i;
+            executorService.execute(() -> {
+                System.out.println("Task with ID " +finalI +" is executed by " +Thread.currentThread().getName());
+            });
+        }
+
         executorService.shutdown();
     }
 }

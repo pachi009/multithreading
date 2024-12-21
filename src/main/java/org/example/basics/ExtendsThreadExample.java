@@ -1,4 +1,4 @@
-package org.example;
+package org.example.basics;
 
 public class ExtendsThreadExample {
     public static void main(String[] args) throws InterruptedException {
