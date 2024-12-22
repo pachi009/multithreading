@@ -31,7 +31,7 @@ public class BlockingQueueDemo {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-        });
+        }, "consumerOne");
 
         Thread consumerTwo = new Thread(() -> {
             try {
@@ -43,7 +43,7 @@ public class BlockingQueueDemo {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-        });
+        }, "consumerTwo");
 
         producer.start();
         consumerOne.start();

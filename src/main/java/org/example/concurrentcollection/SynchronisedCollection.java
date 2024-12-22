@@ -7,8 +7,8 @@ import java.util.concurrent.*;
 
 public class SynchronisedCollection {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-           List<Integer> list = Collections.synchronizedList(new ArrayList());
-//       List<Integer> list = new ArrayList<>();
+        List<Integer> list = Collections.synchronizedList(new ArrayList());
+//        List<Integer> list = new ArrayList<>();
         Thread t1 = new Thread(() -> {
            for (int i = 0; i < 1000; i++) {
                list.add(i);
