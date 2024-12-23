@@ -5,7 +5,7 @@ import java.util.concurrent.BlockingQueue;
 
 public class BlockingQueueDemo {
     private static final int CAPACITY = 8;
-    private static BlockingQueue<Integer> queue = new ArrayBlockingQueue<Integer>(CAPACITY);
+    private static BlockingQueue<Integer> queue = new ArrayBlockingQueue<>(CAPACITY);
 
     public static void main(String[] args) {
 //        Producer thread to produce data

@@ -6,6 +6,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+// Producer Consumer demo using locks and conditions
 public class ConditionDemo {
     private final Integer MAX_SIZE = 5;
     private final Queue<Integer> queue = new LinkedList<Integer>();

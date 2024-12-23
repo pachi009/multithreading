@@ -8,15 +8,10 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class CopyOnWriteArrayDemo {
     public static void main(String[] args) {
         List<Integer> list = new CopyOnWriteArrayList<>(Arrays.asList(0, 0, 0, 0, 0, 0, 0, 0, 0));
-        Thread reader = new Thread(new ReadTask(list));
-        Thread writer1 = new Thread(new WriteTask(list));
-        Thread writer2 = new Thread(new WriteTask(list));
-        Thread writer3 = new Thread(new WriteTask(list));
-
-        reader.start();
-        writer1.start();
-        writer2.start();
-        writer3.start();
+        new Thread(new ReadTask(list)).start();
+        new Thread(new WriteTask(list)).start();
+        new Thread(new WriteTask(list)).start();
+        new Thread(new WriteTask(list)).start();
     }
 }
 
