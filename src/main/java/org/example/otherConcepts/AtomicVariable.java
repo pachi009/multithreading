@@ -21,13 +21,14 @@ public class AtomicVariable {
 
         one.start();
         two.start();
+
         try {
             one.join();
             two.join();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        System.out.println("Counter: " +counter.get());
+        System.out.println("Counter: " +counter);
     }
 
 }

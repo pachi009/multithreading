@@ -30,7 +30,9 @@ public class ReentrantLockDemo {
     public static void main(String[] args) {
         ReentrantLockDemo demo = new ReentrantLockDemo();
         for (int i = 0; i < 5; i++) {
-
+//            Using lambda
+//            new Thread(() -> demo.methodA()).start();
+//            Using method reference
             new Thread(demo::methodA).start();
         }
     }
